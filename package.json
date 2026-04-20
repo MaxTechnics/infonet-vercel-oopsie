@@ -1,0 +1,57 @@
+{
+  "name": "@infonet/vercel-oopsie",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "build:dev": "run-p type-check build-only:dev",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "lint": "eslint .",
+    "format": "prettier src/",
+    "codelines": "cloc . --exclude-dir=node_modules,dist --not-match-f='(package-lock.json)'",
+    "bump": "npm --no-git-tag-version version patch",
+    "bump:minor": "npm --no-git-tag-version version minor",
+    "bump:major": "npm --no-git-tag-version version major",
+    "update": "check-outdated --columns package,current,wanted,latest,location,changes --ignore-packages @types/node,vue-select,tailwindcss"
+  },
+  "dependencies": {
+    "@vueuse/core": "^14.2.1",
+    "@vueuse/motion": "^3.0.3",
+    "psl": "^1.15.0",
+    "vue": "^3.5.32",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.5",
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^22.19.1",
+    "@types/psl": "^1.1.3",
+    "@vitejs/plugin-vue": "^6.0.3",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.6.0",
+    "@vue/tsconfig": "^0.8.1",
+    "autoprefixer": "^10.4.23",
+    "check-outdated": "^2.14.0",
+    "cloc": "^2.6.0-cloc",
+    "eslint": "^9.39.2",
+    "eslint-plugin-cypress": "^5.2.0",
+    "eslint-plugin-vue": "^10.6.2",
+    "jiti": "^2.6.1",
+    "jsdom": "^26.1.0",
+    "npm-run-all2": "^8.0.4",
+    "postcss": "^8.5.6",
+    "prettier": "^3.7.4",
+    "start-server-and-test": "^2.1.5",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.2",
+    "vite-plugin-vue-devtools": "^8.0.5",
+    "vue-tsc": "^3.2.7"
+  }
+}
