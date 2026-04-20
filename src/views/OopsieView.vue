@@ -12,9 +12,9 @@
 
 				<div class="pop-up__subtitle">Door een cyberaanval op een van onze providers (Vercel) besloten we om Infonet tijdelijk offline te halen om voorzorgsmaatregelen te nemen. Infonet zal even niet beschikbaar zijn.</div>
 				<div class="pop-up__subtitle">Onze excuses voor het ongemak</div>
-				<Button class="loginButton" @click="teleport">
+				<!-- <Button class="loginButton" @click="teleport">
 					<span class="loginText">Reload</span>
-				</Button>
+				</Button> -->
 			</div>
 		</div>
 	</div>
@@ -84,16 +84,12 @@ const teleport = async () => {
 	// }, 500);
 };
 
-const teleport_to_dashboard = async () => {
-
-	show.value = false;
-	auth_logo.value!.motion_instance.leave(() => { });
-	authbox_motion_instance.leave(() => { });
-	router.push(route.query.redirect as string || '/dashboard');
-};
-
 onMounted(() => {
 	show.value = true;
+
+	setTimeout(() => {
+		teleport();
+	}, 30000)
 });
 </script>
 
